@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+
+        <form action='short' method='POST'>
+            {% csrf_token %}
+            <input type="text" class="form-control" name='long_url' placeholder="URL" aria-label="URL">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-size" type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+<br>
+{{message}}
+<br>
+<div class="row">
+    <textarea class="col-md-offset-1 form-control col-md-4 mb-3 ml-3" id="url" rows="1" cols="12"
+        readonly>{{shorturl}}</textarea>
+    <input class="btn btn-outline-secondary btn-sm col-md-2 mb-3 ml-2" type="button" value="Copy URL" onclick="Copy();">
+</div>
+
+{% endblock %}

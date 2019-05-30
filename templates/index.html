@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>URL Shortener</title>
+
+    <script>
+        function GoToHomePage() {
+            window.location = '/';
+        }
+        function Copy() {
+            var Url = document.getElementById("url");
+            console.log("Url", Url.value)
+            Url.select();
+            document.execCommand("copy");
+        }
+    </script>
+    <style>
+        .bg-grey {
+            background-color: #f7f7f9;
+            margin-top: 20px
+        }
+
+        .btn-size {
+            padding: 2px;
+            margin-top: 5px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-grey">
+        
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                <h1 class="display-4"><a onclick="javascript:GoToHomePage()" href="javascript:void(0)">Welcome to URL
+                        Shortner!</a></h1>
+            </div>
+        </div>
+
+        {% block content %} {% endblock %}
+
+    </div>
+</body>
+
+</html>
